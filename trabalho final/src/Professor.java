@@ -37,7 +37,7 @@ public class Professor extends Pessoa implements Comparar<Professor>{
 
     @Override
     public String toString() {
-        return  "        >>>Professor [CPF: " + CPF +
+        return  ">>>Professor [CPF: " + CPF +
                 ", Nome: " + nome +
                 ", Data de Nascimento: " + dataNascimento +
                 ", Inicio do Contrato: " + inicioContrato +

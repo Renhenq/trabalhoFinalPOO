@@ -1,4 +1,3 @@
-import java.io.Serializable;
 import java.io.*;
 import java.util.*;
 
@@ -9,7 +8,7 @@ public class Turma implements Serializable, Comparar<Turma>{
     private String semestre;
     private String ano;
     private Professor professor;
-    private List<Estudante> estudantes = new ArrayList<Estudante>();
+    private List<Estudante> estudantes;
 
     public Turma(Disciplina disciplina, String semestre, String ano) {
         this.disciplina = disciplina;
@@ -66,6 +65,6 @@ public class Turma implements Serializable, Comparar<Turma>{
 
     @Override
     public String toString() {
-        return "      >>>Turma [Disciplina: " + disciplina.getNome() + ", Semestre: " + semestre + ", Ano: " + ano + "]\n";
+        return ">>>Turma [Disciplina: " + disciplina.getNome() + "\n      Semestre: " + semestre + "\n      Ano: " + ano + "\n      Professor: " + professor + "\n      Alunos{\n" + estudantes + "}\n]\n";
     }
 }

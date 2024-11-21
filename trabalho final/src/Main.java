@@ -10,7 +10,7 @@ public class Main {
         String cpf, nome, dataNascimento, estagio, inicioContrato, codigo, semestre, ano;
         float cra;
 
-        int opcao;
+        int opcao, id = 0;
         do {
             System.out.println("----------MENU----------");
             System.out.println("" +
@@ -113,12 +113,24 @@ public class Main {
                     }
                     break;
                 case 7:
-                    System.out.print("ID da Turma: ");
+                    id = 0;
+                    System.out.println("\n--- Turmas ---");
+                    for (Turma turmas : sistema.getTurmas()){
+                        System.out.printf("ID da turma: %d\n", id);
+                        System.out.println(turmas.toString());
+                        id++;
+                    }
+                    System.out.print("Digite o ID da Turma a ser adicionado o professor: ");
                     int idTurma = sc.nextInt();
                     sc.nextLine();
+
+                    System.out.println("\n--- Professores ---");
+                    for (Professor professores : sistema.getProfessores())
+                        System.out.println(professores.toString());
+
                     if (idTurma >= 0 && idTurma < sistema.getTurmas().size()) {
                         Turma turma = sistema.getTurmas().get(idTurma);
-                        System.out.print("CPF do Professor: ");
+                        System.out.print("Digite o CPF do Professor, com '.' e '-': ");
                         cpf = sc.nextLine();
                         for (Professor professor : sistema.getProfessores()) {
                             if (professor.getCPF().equals(cpf)) {
@@ -132,12 +144,24 @@ public class Main {
                     }
                     break;
                 case 8:
-                    System.out.print("ID da Turma: ");
+                    id = 0;
+                    System.out.println("\n--- Turmas ---");
+                    for (Turma turmas : sistema.getTurmas()){
+                        System.out.printf("ID da turma: %d\n", id);
+                        System.out.println(turmas.toString());
+                        id++;
+                    }
+                    System.out.print("Digite o ID da Turma a qual serão adicionados os alunos: ");
                     idTurma = sc.nextInt();
                     sc.nextLine();
                     if (idTurma >= 0 && idTurma < sistema.getTurmas().size()) {
                         Turma turma = sistema.getTurmas().get(idTurma);
-                        System.out.print("CPF dos Estudantes (separados por vírgula): ");
+
+                        System.out.println("\n--- Estudantes ---");
+                        for (Estudante estudantes : sistema.getEstudantes())
+                            System.out.println(estudantes.toString());
+
+                        System.out.print("Digite os CPF dos Estudantes (com pontuação e separados por vírgula): ");
                         String[] cpfsEstudantes = sc.nextLine().split(",");
                         List<Estudante> listaEstudantes = new ArrayList<>();
                         for (String cpfEstudante : cpfsEstudantes) {

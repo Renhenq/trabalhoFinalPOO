@@ -30,7 +30,7 @@ public class AlunosPos extends Estudante implements Comparar<Estudante>{
 
     @Override
     public String toString() {
-        return "        >>>Aluno [CPF: " + CPF + ", Nome: " + nome +
-                ", Data de Nascimento: " + dataNascimento + ", CRA:" + CRA + ", Tema de Pesquisa: " + temaPesquisa + "\n";
+        return ">>>Aluno [CPF: " + CPF + ", Nome: " + nome +
+                ", Data de Nascimento: " + dataNascimento + ", CRA:" + CRA + ", Tema de Pesquisa: " + temaPesquisa + "]\n";
     }
 }
